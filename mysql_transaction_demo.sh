@@ -53,6 +53,9 @@ rollback;
 
 # 但是，发现已经回滚不了了，因为已经成功commit了。
 
+# 查看server的端口号
+show global variables like 'port';
+
 
 
 
