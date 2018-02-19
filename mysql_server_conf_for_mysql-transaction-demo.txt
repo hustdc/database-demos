@@ -1,0 +1,7 @@
+1 修改/etc/mysql/mariadb.conf.d/50-server.cnf，将bind-address设置为192.168.43.2
+  然后service mysql restart
+2 创建远程访问用户并且授予访问数据库的权限
+  CREATE USER 'chao'@'192.168.43.132' IDENTIFIED BY '123456'
+  GRANT ALL ON wallet.* TO 'chao'@'192.168.43.132';
+  FLUSH PRIVILEGES;
+   
