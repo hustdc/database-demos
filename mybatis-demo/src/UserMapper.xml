@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="caiweiwei.com.cn.fkit.mapper.UserMapper">
+  <insert id="save" parameterType="caiweiwei.com.cn.fkit.domain.User" useGeneratedKeys="true">
+    INSERT INTO tb_user(name, sex, age) VALUES(#{name}, #{sex}, #{age})
+  </insert>
+</mapper>
+
