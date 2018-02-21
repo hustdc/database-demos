@@ -5,5 +5,23 @@
   <insert id="save" parameterType="caiweiwei.com.cn.fkit.domain.User" useGeneratedKeys="true">
     INSERT INTO tb_user(name, sex, age) VALUES(#{name}, #{sex}, #{age})
   </insert>
+  
+  <resultMap id="studentResultMap" type="caiweiwei.com.cn.fkit.domain.Student">
+    <id property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="sex" column="sex"/>
+    <result property="age" column="age"/>
+    <association property="clazz" column="clazz_id" javaType="caiweiwei.com.cn.fkit.domain.Clazz"
+      select="selectClazzWithId"/>
+  </resultMap>
+  
+  <select id="selectClazzWithId" resultType="caiweiwei.com.cn.fkit.domain.Clazz">
+    SELECT * FROM TB_CLAZZ where id=#{id}
+  </select>
+  
+  <select id="selectStudent" resultMap="studentResultMap">
+    SELECT * FROM TB_STUDENT
+  </select>
+  
 </mapper>
 
